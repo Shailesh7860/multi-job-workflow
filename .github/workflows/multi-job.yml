@@ -69,18 +69,18 @@ jobs:
 
     test-linux:
       - name: Linux Executable
-        runs-on: ubuntu-latest
-        needs: cross-compile
-        steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: ./apps
+      runs-on: ubuntu-latest
+      needs: cross-compile
+      steps:
+        - name: Download artifacts
+          uses: actions/download-artifact@v4
+          with:
+            name: ./apps
 
-      - name: Make binary executable
-        run: chmod +x ./apps
+        - name: Make binary executable
+          run: chmod +x ./apps
 
-      - name: Listing Files
-        run: |
-          ls -lrth
-          ls ./apps
+        - name: Listing Files
+          run: |
+            ls -lrth
+            ls ./apps
