@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     ubuntu:
-        runs-os: ubuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
               run: ./main
 
     windows:
-        runs-os: windows-latest
+        runs-on: windows-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
               run: .\main.exe
     
     macos:
-        runs-os: macos-latest
+        runs-on: macos-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
               run: ./main
 
     cross-compile:
-        runs-os: ubuntu-latest
+        runs-on: ubuntu-latest
         needs: [ubuntu,windows,macos]
         steps:
             - name: Checkout code
